@@ -1,5 +1,4 @@
 import { galleryItems } from './gallery-items.js';
-
 // Change code below this line
 
 // console.log(galleryItems);
@@ -12,14 +11,10 @@ galleryDiv.insertAdjacentHTML('beforeend', cardsGallery);
 
 function createGalleryCards(items) {
     return items.map(({ preview, original, description }) => {
-        return `
+        return ` 
     <div class="gallery__item">
         <a class="gallery__link" href="${original}">
-        <img 
-            class="gallery__image"
-            src="${preview}"
-            data-source="${original}"
-            alt="${description}" />
+        <img class="gallery__image" src="${preview}" data-source="${original}" alt="${description}"/>
         </a>
     </div>
     `;
@@ -31,7 +26,6 @@ function galleryDivClick(event) {
     if (!event.target.classList.contains('gallery__image')) {
         return;
     }
-
 
     modalWindow(event.target.dataset.source);
 };
