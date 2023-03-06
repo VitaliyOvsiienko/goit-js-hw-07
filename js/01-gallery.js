@@ -37,12 +37,14 @@ function modalWindow(url) {
 
     modal.show();
    
-    document.addEventListener('keydown', handleEscKeydown);
+    document.addEventListener('keydown', onEscKeyPress);
 
-    function handleEscKeydown(event) {
-        if (event.code === 'Escape') {
+    function onEscKeyPress(event) {
+        const ESC_KEY_CODE = 'Escape'
+        
+        if (event.code === ESC_KEY_CODE) {
             modal.close();
-        document.removeEventListener('keydown', handleEscKeydown);
+        document.removeEventListener('keydown', onEscKeyPress);
         }
     }
 };
